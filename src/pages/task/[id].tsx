@@ -99,20 +99,22 @@ export default function Task({item, allComments} : TaskProps){
                     <p>{item?.tarefa}</p>
                 </article>
             </main>
+            
+            {session?.user && (
+                <section className={styles.commentsContainer}>
+                    <h2>Leave a comment</h2>
 
-            <section className={styles.commentsContainer}>
-                <h2>Leave a comment</h2>
+                    <form onSubmit={handleComment}>
+                        <Textarea
+                            placeholder="Enter your comment..."
+                            value={input}
+                            onChange={(event: ChangeEvent<HTMLTextAreaElement>) => setInput(event.target.value)}
+                        />
 
-                <form onSubmit={handleComment}>
-                    <Textarea
-                        placeholder="Enter your comment..."
-                        value={input}
-                        onChange={(event: ChangeEvent<HTMLTextAreaElement>) => setInput(event.target.value)}
-                    />
-
-                    <button className={styles.button} disabled={!session?.user}>Send comment</button>
-                </form>
-            </section>
+                        <button className={styles.button}>Send comment</button>
+                    </form>
+                </section>
+            )}
 
             <section className={styles.commentsContainer}>
                 <h2>All comments</h2>

@@ -8,6 +8,7 @@ import { GetStaticProps } from "next";  //Usamos isso para criar páginas estát
 import { collection, getDocs } from "firebase/firestore";
 
 import { db } from "@/services/firebaseConnection";
+import Link from "next/link";
 
 interface HomeProps{
   posts: number;
@@ -34,12 +35,12 @@ export default function Home({posts, comments}: HomeProps) {
         <h1 className={styles.title}>System designed for you to organize <br/> your studies and tasks</h1>
 
         <div className={styles.infoContent}>
-          <section className={styles.box}>
+          <Link href={"/tasks"} className={styles.box}>
             <span>+{posts} posts</span>
-          </section>
-          <section className={styles.box}>
+          </Link>
+          <Link href={"/tasks"} className={styles.box}>
             <span>+{comments} comments</span>
-          </section>
+          </Link>
         </div>
       </main>
     </div>
