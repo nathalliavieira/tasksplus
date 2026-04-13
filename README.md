@@ -1,40 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Tasks+
 
-## Getting Started
+> A task management app where users can create public or private tasks, share them and leave comments.
 
-First, run the development server:
+---
+
+## 📸 Screenshots
+
+| Home | Dashboard — My Tasks |
+|------|----------------------|
+| ![Home](.github/images/home.png) | ![Dashboard](.github/images/dashboard.png) |
+
+| All Tasks (Public) | Task Details & Comments |
+|--------------------|------------------------|
+| ![All Tasks](.github/images/allTasks.png) | ![Task Details](.github/images/sectionTaskDetails.png) |
+
+---
+
+## ✨ Features
+
+- 🔐 Authentication — login with Google via NextAuth
+- ✅ Task creation — add tasks and choose whether they are public or private
+- 🌐 Public tasks — publicly listed tasks are visible to all users with a shareable link
+- 💬 Comments — authenticated users can leave comments on any public task
+- 🗑️ Delete — users can delete their own tasks and comments
+- 📊 Dashboard — personal view showing all your tasks with post and comment counts
+
+---
+
+## 🛠️ Tech Stack
+
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- A Firebase project or compatible database
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/nathalliavieira/tasksplus.git
+cd tasksplus
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp copy.env .env.local
+# Edit .env.local with your credentials
+```
+
+### Environment Variables
+
+```env
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_nextauth_secret
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+### Running locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 🌐 Live Demo
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+👉 [tasksplus-omega.vercel.app](https://tasksplus-omega.vercel.app)
